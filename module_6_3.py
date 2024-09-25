@@ -1,7 +1,7 @@
 class Horse:
-    def __init__(self, x_distance=0, sound='Frrr'):
-        self.x_distance = x_distance
-        self.sound = sound
+    def __init__(self):
+        self.x_distance = 0
+        self.sound = 'Frrr'
 
 
 
@@ -11,9 +11,9 @@ class Horse:
 
 
 class Eagle:
-    def __init__(self, y_distance=0, sound='I train, eat, sleep, and repeat'):
-        self.y_distance = y_distance
-        self.sound = sound
+    def __init__(self):
+        self.y_distance = 0
+        self.sound = 'I train, eat, sleep, and repeat'
 
 
 
@@ -24,18 +24,18 @@ class Eagle:
 
 class Pegasus(Horse, Eagle):
 
-    def __init__(self, x_distance, y_distance):
-        super().__init__(x_distance, y_distance)
+    def __init__(self):
+        super().__init__()
 
     def move(self, dx, dy):
-        super().run(dx)
-        super().fly(dy)
+        self.run(dx)
+        self.fly(dy)
 
     def get_pos(self):
         return self.x_distance, self.y_distance
 
     def voice(self):
-        return print(super().sound)
+        return print(self.sound)
 
 
 p1 = Pegasus()
